@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- Lien pour bootstrap CSS -->
+		<link rel="stylesheet" href="https:/cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+		<title>Modifier un utilisateur</title>
+	</head>
+	
+	<body class="container mt-5">
+
+		<div>
+			<h1 class="text-center">Modification des informations de l'utilisateur {{ user.name }}</h1>
+			<form method="POST" action="/edit/{{ user.id }}" class="mt-4">
+				
+				<div class="mb-3">
+					<label for='name' class="form-label">Nom :</label>
+					<input type="text" id="name" name="name" value="{{ user.name }}" class="form-control" required>
+				</div>
+				
+				<div>
+					<label for='age' class="form-label">Âge :</label>
+					<input type="number" id="age" name="age" value="{{ user.name }}" class="form-control" required>
+				</div>
+
+				<div class="mb-3">
+					<label for='password'class="form-label">Mot de passe :</label>
+					<input type="password" id="password" name="password" class="form-control" required>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Mettre à jour</button>
+
+			</form>
+		</div>
+		<a href="/users" class="btn btn-secondary mt-3">Retour</a>
+
+	</body>
